@@ -1,0 +1,81 @@
+@font-face {
+  font-family: "fontGame";
+  src: url("../font/icielPony.ttf");
+}
+
+.gameOanTuTi {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/bgGame.png");
+  background-size: 100%;
+  font-family: fontGame;
+}
+
+.btnItem {
+  width: 50px;
+  height: 50px;
+  transition: all 0.3s linear;
+  outline: none;
+}
+
+.btnItem:hover {
+  background-color: #0011ff;
+}
+
+.btnItem img {
+  width: 100%;
+}
+
+.playerGame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.speech-bubble {
+  position: relative;
+  width: 200px;
+  text-align: center;
+  line-height: 1.4em;
+  margin-bottom: 10px;
+  background-color: #333;
+  border: 4px solid #fff;
+  border-radius: 30px;
+  font-family: sans-serif;
+  padding: 10px;
+  font-size: large;
+}
+
+.speech-bubble:before,
+.speech-bubble:after {
+  content: " ";
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.speech-bubble:before {
+  right: 34px;
+  bottom: -30px;
+  border: 15px solid;
+  border-color: #fff transparent transparent #fff;
+}
+
+.speech-bubble:after {
+  right: 40px;
+  bottom: -20px;
+  border: 10px solid;
+  border-color: #333 transparent transparent #333;
+}
+
+.speech-bubble img {
+  width: 30%;
+}
+
+.text {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
