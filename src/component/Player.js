@@ -23,12 +23,18 @@ class Player extends Component {
             let bgColor = {};
 
             if (item.datCuoc) {
-              bgColor = { backgroundColor: "#0011ff" };
+              bgColor = { backgroundColor: "#28a745" };
             }
 
             return (
               <div className="col-4" key={index}>
-                <button style={bgColor} className="btnItem">
+                <button
+                  onClick={() => {
+                    this.props.datCuoc(item.ma);
+                  }}
+                  style={bgColor}
+                  className="btnItem"
+                >
                   <img src={item.hinhAnh} alt={item.hinhAnh} />
                 </button>
               </div>
@@ -46,4 +52,15 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Player);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    datCuoc: (maCuoc) => {
+      dispatch({
+        type: "CUOC",
+        payload: maCuoc,
+      });
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Player);

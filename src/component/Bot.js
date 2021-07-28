@@ -3,11 +3,22 @@ import { connect } from "react-redux";
 
 class Bot extends Component {
   render() {
+    let keyframes = `@keyframes spin${Date.now()} { 
+      from { 
+          transform: rotate(0deg); 
+      } to { 
+          transform: rotate(360deg); 
+      }
+  }`;
     return (
       <div className="playerGame text-center">
+        <style>{keyframes}</style>
         <div className="speech-bubble">
           <img
-            style={{ transform: "rotateY(180deg)" }}
+            style={{
+              transform: "rotateY(180deg)",
+              animation: `spin${Date.now()} 0.25s`,
+            }}
             src={this.props.bot.hinhAnh}
             alt={this.props.bot.hinhAnh}
           />
